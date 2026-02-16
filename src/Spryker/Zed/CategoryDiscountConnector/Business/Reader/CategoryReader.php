@@ -17,7 +17,7 @@ use Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConn
 class CategoryReader implements CategoryReaderInterface
 {
     /**
-     * @var array<int, list<string>>
+     * @var array<int, array<string>>
      */
     protected static array $categoryKeysGroupedByIdCategoryNode = [];
 
@@ -61,7 +61,7 @@ class CategoryReader implements CategoryReaderInterface
     /**
      * @param array<int, list<\Generated\Shared\Transfer\ProductCategoryTransfer>> $productCategoryTransfersGroupedByIdProductAbstract
      *
-     * @return array<int, list<string>>
+     * @return array<int, array<string>>
      */
     public function getCategoryKeysGroupedByIdCategoryNode(array $productCategoryTransfersGroupedByIdProductAbstract): array
     {
