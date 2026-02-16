@@ -97,7 +97,7 @@ class CategoryReader implements CategoryReaderInterface
     /**
      * @param array<int, list<\Generated\Shared\Transfer\ProductCategoryTransfer>> $productCategoryTransfersGroupedByIdProductAbstract
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractCategoryNodeIds(array $productCategoryTransfersGroupedByIdProductAbstract): array
     {

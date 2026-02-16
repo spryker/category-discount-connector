@@ -71,7 +71,7 @@ class ProductCategoryReader implements ProductCategoryReaderInterface
     }
 
     /**
-     * @param list<int> $productAbstractIds
+     * @param array<int> $productAbstractIds
      *
      * @return \Generated\Shared\Transfer\ProductCategoryCollectionTransfer
      */
