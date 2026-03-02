@@ -53,11 +53,6 @@ class CategoryDiscountConnectorBusinessTester extends Actor
      */
     protected const LIST_DELIMITER = ';';
 
-    /**
-     * @param int $idCategory
-     *
-     * @return \Generated\Shared\Transfer\CategoryTransfer|null
-     */
     public function findCategoryById(int $idCategory): ?CategoryTransfer
     {
         return $this->getLocator()
@@ -86,11 +81,6 @@ class CategoryDiscountConnectorBusinessTester extends Actor
             ->setAcceptedTypes([static::TYPE_LIST]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(CategoryTransfer $categoryTransfer): QuoteTransfer
     {
         $firstProductTransfer = $this->haveProduct();
@@ -105,9 +95,6 @@ class CategoryDiscountConnectorBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return void
-     */
     public function cleanRuleCheckerStaticProperties(): void
     {
         $reflectedClass = new ReflectionClass(ProductCategoryReader::class);
@@ -122,12 +109,6 @@ class CategoryDiscountConnectorBusinessTester extends Actor
         $categoryKeysGroupedByIdCategoryNode->setValue([]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductCategoryCollectionTransfer
-     */
     public function createProductCategoryCollectionTransfer(CategoryTransfer $categoryTransfer, QuoteTransfer $quoteTransfer): ProductCategoryCollectionTransfer
     {
         $productCategoryCollectionTransfer = new ProductCategoryCollectionTransfer();

@@ -63,9 +63,6 @@ class IsCategorySatisfiedByTest extends Unit
      */
     protected CategoryDiscountConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -73,9 +70,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->tester->cleanRuleCheckerStaticProperties();
     }
 
-    /**
-     * @return void
-     */
     public function testIsCategorySatisfiedByChecksInRealCategoryKey(): void
     {
         // Arrange
@@ -95,9 +89,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->assertTrue($isCategorySatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCategorySatisfiedByChecksNotInRealCategoryKey(): void
     {
         // Arrange
@@ -117,9 +108,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->assertFalse($isCategorySatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCategorySatisfiedByChecksInFakeCategoryKey(): void
     {
         // Arrange
@@ -141,9 +129,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->assertFalse($isCategorySatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCategorySatisfiedByChecksNotInFakeCategoryKey(): void
     {
         // Arrange
@@ -165,9 +150,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->assertTrue($isCategorySatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutClauseValue(): void
     {
         // Arrange
@@ -190,9 +172,6 @@ class IsCategorySatisfiedByTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutIdProductAbstract(): void
     {
         // Arrange
@@ -213,9 +192,6 @@ class IsCategorySatisfiedByTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotCacheProductCategoriesWhenDifferentProductsAreVerified(): void
     {
         // Arrange
@@ -243,9 +219,6 @@ class IsCategorySatisfiedByTest extends Unit
         $this->assertTrue($isCategorySatisfied2);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCacheProductCategoriesWhenTheSameProductIsVerified(): void
     {
         // Arrange

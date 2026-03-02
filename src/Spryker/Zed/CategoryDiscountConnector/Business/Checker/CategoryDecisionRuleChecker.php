@@ -38,11 +38,6 @@ class CategoryDecisionRuleChecker implements CategoryDecisionRuleCheckerInterfac
      */
     protected CategoryReaderInterface $categoryReader;
 
-    /**
-     * @param \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToDiscountFacadeInterface $discountFacade
-     * @param \Spryker\Zed\CategoryDiscountConnector\Business\Reader\ProductCategoryReaderInterface $productCategoryReader
-     * @param \Spryker\Zed\CategoryDiscountConnector\Business\Reader\CategoryReaderInterface $categoryReader
-     */
     public function __construct(
         CategoryDiscountConnectorToDiscountFacadeInterface $discountFacade,
         ProductCategoryReaderInterface $productCategoryReader,
@@ -53,13 +48,6 @@ class CategoryDecisionRuleChecker implements CategoryDecisionRuleCheckerInterfac
         $this->categoryReader = $categoryReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isCategorySatisfiedBy(QuoteTransfer $quoteTransfer, ItemTransfer $itemTransfer, ClauseTransfer $clauseTransfer): bool
     {
         $productCategoryTransfersGroupedByIdProductAbstract = $this->productCategoryReader->getProductCategoriesGroupedByIdProductAbstract($quoteTransfer);

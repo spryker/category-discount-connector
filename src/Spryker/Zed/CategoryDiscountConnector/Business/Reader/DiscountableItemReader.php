@@ -27,9 +27,6 @@ class DiscountableItemReader implements DiscountableItemReaderInterface
      */
     protected $categoryDecisionRuleChecker;
 
-    /**
-     * @param \Spryker\Zed\CategoryDiscountConnector\Business\Checker\CategoryDecisionRuleCheckerInterface $categoryDecisionRuleChecker
-     */
     public function __construct(CategoryDecisionRuleCheckerInterface $categoryDecisionRuleChecker)
     {
         $this->categoryDecisionRuleChecker = $categoryDecisionRuleChecker;
@@ -56,12 +53,6 @@ class DiscountableItemReader implements DiscountableItemReaderInterface
         return $discountableItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\DiscountableItemTransfer
-     */
     protected function createDiscountableItem(ItemTransfer $itemTransfer, string $priceMode): DiscountableItemTransfer
     {
         return (new DiscountableItemTransfer())
@@ -71,12 +62,6 @@ class DiscountableItemReader implements DiscountableItemReaderInterface
             ->setOriginalItem($itemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return int
-     */
     protected function getUnitPrice(ItemTransfer $itemTransfer, string $priceMode): int
     {
         if ($priceMode === static::PRICE_MODE_NET) {

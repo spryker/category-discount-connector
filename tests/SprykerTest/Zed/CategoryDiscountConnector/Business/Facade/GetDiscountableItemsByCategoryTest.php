@@ -67,9 +67,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -77,9 +74,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
         $this->tester->cleanRuleCheckerStaticProperties();
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksInRealCategoryKey(): void
     {
         // Arrange
@@ -103,9 +97,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
         $this->assertEquals($quoteTransfer->getItems()->offsetGet(0), $discountableItemTransfers[0]->getOriginalItem());
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksIsNotInOperator(): void
     {
         // Arrange
@@ -125,9 +116,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
         $this->assertEmpty($discountableItemTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksInFakeCategoryKey(): void
     {
         // Arrange
@@ -149,9 +137,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
         $this->assertEmpty($discountableItemTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutPriceMode(): void
     {
         // Arrange
@@ -171,9 +156,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutUnitNetPrice(): void
     {
         // Arrange
@@ -195,9 +177,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutUnitGrossPrice(): void
     {
         // Arrange
@@ -219,9 +198,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutIdProductAbstract(): void
     {
         // Arrange
@@ -243,9 +219,6 @@ class GetDiscountableItemsByCategoryTest extends Unit
             );
     }
 
-    /**
-     * @return void
-     */
     public function testGetDiscountableItemsByCategoryChecksQuoteWithoutClauseValue(): void
     {
         // Arrange

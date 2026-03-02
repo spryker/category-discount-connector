@@ -39,11 +39,6 @@ class CategoryDiscountConnectorDependencyProvider extends AbstractBundleDependen
      */
     public const FACADE_PRODUCT_CATEGORY = 'FACADE_PRODUCT_CATEGORY';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -56,11 +51,6 @@ class CategoryDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCategoryFacade(Container $container): Container
     {
         $container->set(static::FACADE_CATEGORY, function (Container $container) {
@@ -70,11 +60,6 @@ class CategoryDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductCategoryFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT_CATEGORY, function (Container $container) {
@@ -84,11 +69,6 @@ class CategoryDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -98,11 +78,6 @@ class CategoryDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDiscountFacade(Container $container): Container
     {
         $container->set(static::FACADE_DISCOUNT, function (Container $container) {

@@ -43,9 +43,6 @@ class GetCategoryNamesIndexedByCategoryKeyTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetCategoryNamesIndexedByCategoryKey(): void
     {
         // Arrange

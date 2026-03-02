@@ -27,9 +27,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CategoryDiscountConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Business\Reader\DiscountableItemReaderInterface
-     */
     public function createDiscountableItemReader(): DiscountableItemReaderInterface
     {
         return new DiscountableItemReader(
@@ -37,9 +34,6 @@ class CategoryDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Business\Checker\CategoryDecisionRuleCheckerInterface
-     */
     public function createCategoryDecisionRuleChecker(): CategoryDecisionRuleCheckerInterface
     {
         return new CategoryDecisionRuleChecker(
@@ -49,9 +43,6 @@ class CategoryDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Business\Reader\CategoryReaderInterface
-     */
     public function createCategoryReader(): CategoryReaderInterface
     {
         return new CategoryReader(
@@ -60,9 +51,6 @@ class CategoryDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Business\Reader\ProductCategoryReaderInterface
-     */
     public function createProductCategoryReader(): ProductCategoryReaderInterface
     {
         return new ProductCategoryReader(
@@ -71,33 +59,21 @@ class CategoryDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): CategoryDiscountConnectorToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(CategoryDiscountConnectorDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToDiscountFacadeInterface
-     */
     public function getDiscountFacade(): CategoryDiscountConnectorToDiscountFacadeInterface
     {
         return $this->getProvidedDependency(CategoryDiscountConnectorDependencyProvider::FACADE_DISCOUNT);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToCategoryFacadeInterface
-     */
     public function getCategoryFacade(): CategoryDiscountConnectorToCategoryFacadeInterface
     {
         return $this->getProvidedDependency(CategoryDiscountConnectorDependencyProvider::FACADE_CATEGORY);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToProductCategoryFacadeInterface
-     */
     public function getProductCategoryFacade(): CategoryDiscountConnectorToProductCategoryFacadeInterface
     {
         return $this->getProvidedDependency(CategoryDiscountConnectorDependencyProvider::FACADE_PRODUCT_CATEGORY);

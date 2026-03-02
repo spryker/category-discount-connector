@@ -26,11 +26,6 @@ class CategoryDiscountConnectorToCategoryFacadeBridge implements CategoryDiscoun
         $this->categoryFacade = $categoryFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryCriteriaTransfer $categoryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryCollectionTransfer
-     */
     public function getCategoryCollection(CategoryCriteriaTransfer $categoryCriteriaTransfer): CategoryCollectionTransfer
     {
         return $this->categoryFacade->getCategoryCollection($categoryCriteriaTransfer);

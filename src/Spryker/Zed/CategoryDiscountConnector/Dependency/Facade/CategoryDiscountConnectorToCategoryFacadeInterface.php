@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\CategoryNodeCriteriaTransfer;
 
 interface CategoryDiscountConnectorToCategoryFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CategoryCriteriaTransfer $categoryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryCollectionTransfer
-     */
     public function getCategoryCollection(CategoryCriteriaTransfer $categoryCriteriaTransfer): CategoryCollectionTransfer;
 
     /**

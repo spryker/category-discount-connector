@@ -31,10 +31,6 @@ class ProductCategoryReader implements ProductCategoryReaderInterface
      */
     protected CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToProductCategoryFacadeInterface $productCategoryFacade
-     * @param \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(
         CategoryDiscountConnectorToProductCategoryFacadeInterface $productCategoryFacade,
         CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade

@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ProductCategoryCriteriaTransfer;
 
 interface CategoryDiscountConnectorToProductCategoryFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductCategoryCriteriaTransfer $productCategoryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductCategoryCollectionTransfer
-     */
     public function getProductCategoryCollection(ProductCategoryCriteriaTransfer $productCategoryCriteriaTransfer): ProductCategoryCollectionTransfer;
 }

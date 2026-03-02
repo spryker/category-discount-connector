@@ -31,10 +31,6 @@ class CategoryReader implements CategoryReaderInterface
      */
     protected CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToCategoryFacadeInterface $categoryFacade
-     * @param \Spryker\Zed\CategoryDiscountConnector\Dependency\Facade\CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(
         CategoryDiscountConnectorToCategoryFacadeInterface $categoryFacade,
         CategoryDiscountConnectorToLocaleFacadeInterface $localeFacade
@@ -80,9 +76,6 @@ class CategoryReader implements CategoryReaderInterface
         return static::$categoryKeysGroupedByIdCategoryNode;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CategoryCollectionTransfer
-     */
     protected function getCategoryCollectionForCurrentLocale(): CategoryCollectionTransfer
     {
         $localeTransfer = $this->localeFacade->getCurrentLocale();
