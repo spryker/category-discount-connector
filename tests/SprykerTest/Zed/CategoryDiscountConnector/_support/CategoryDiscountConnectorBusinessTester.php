@@ -100,12 +100,10 @@ class CategoryDiscountConnectorBusinessTester extends Actor
         $reflectedClass = new ReflectionClass(ProductCategoryReader::class);
 
         $productCategoryTransfersGroupedByIdProductAbstract = $reflectedClass->getProperty('productCategoryTransfersGroupedByIdProductAbstract');
-        $productCategoryTransfersGroupedByIdProductAbstract->setAccessible(true);
         $productCategoryTransfersGroupedByIdProductAbstract->setValue([]);
 
         $reflectedClass = new ReflectionClass(CategoryReader::class);
         $categoryKeysGroupedByIdCategoryNode = $reflectedClass->getProperty('categoryKeysGroupedByIdCategoryNode');
-        $categoryKeysGroupedByIdCategoryNode->setAccessible(true);
         $categoryKeysGroupedByIdCategoryNode->setValue([]);
     }
 
