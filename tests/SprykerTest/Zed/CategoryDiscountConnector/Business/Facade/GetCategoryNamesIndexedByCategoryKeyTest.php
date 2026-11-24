@@ -9,6 +9,7 @@ namespace SprykerTest\Zed\CategoryDiscountConnector\Business\Facade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\CategoryTransfer;
+use Generated\Shared\Transfer\LocaleTransfer;
 
 /**
  * Auto-generated group annotations
@@ -63,14 +64,25 @@ class GetCategoryNamesIndexedByCategoryKeyTest extends Unit
         $indexedCategories = $this->tester->getFacade()->getCategoryNamesIndexedByCategoryKey();
 
         // Assert
-        $rootCategoryName = $rootCategory->getLocalizedAttributes()->offsetGet(1)->getName();
-        $firstCategoryName = $firstCategory->getLocalizedAttributes()->offsetGet(1)->getName();
-        $secondCategoryName = $secondCategory->getLocalizedAttributes()->offsetGet(1)->getName();
+        $rootCategoryName = $this->getCategoryNameForLocale($rootCategory, $currentLocaleTransfer);
+        $firstCategoryName = $this->getCategoryNameForLocale($firstCategory, $currentLocaleTransfer);
+        $secondCategoryName = $this->getCategoryNameForLocale($secondCategory, $currentLocaleTransfer);
 
         $this->assertContains($rootCategoryName, array_values($indexedCategories));
         $this->assertContains($firstCategoryName, array_values($indexedCategories));
         $this->assertContains($secondCategoryName, array_values($indexedCategories));
 
         $this->assertSame($indexedCategories[static::SECOND_CATEGORY_KEY], $secondCategoryName);
+    }
+
+    protected function getCategoryNameForLocale(CategoryTransfer $categoryTransfer, LocaleTransfer $localeTransfer): ?string
+    {
+        foreach ($categoryTransfer->getLocalizedAttributes() as $categoryLocalizedAttributesTransfer) {
+            if ($categoryLocalizedAttributesTransfer->getLocaleOrFail()->getIdLocale() === $localeTransfer->getIdLocale()) {
+                return $categoryLocalizedAttributesTransfer->getName();
+            }
+        }
+
+        return null;
     }
 }
